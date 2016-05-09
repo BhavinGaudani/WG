@@ -1,3 +1,16 @@
+myApp.factory('dataFactory', ['$http', "$window", function($http, $window) {
+
+	var urlBase = 'http://rajeshnandwani-001-site6.htempurl.com';
+	var dataFactory = {};
+
+	dataFactory.chekUser = function() {
+		return $http.get(urlBase + '/api/cse');
+	};
+	
+	return dataFactory;
+}]);
+
+
 myApp.controller("controller", ['$scope','$http', function($scope, $http) {
 	
 	$scope.alertDeviceInfo = function() {
@@ -37,4 +50,16 @@ myApp.controller("controller", ['$scope','$http', function($scope, $http) {
 			alert(err.message);
 		});
 	};
+	
+	$scope.callapi2 = function() {
+		dataFactory.chekUser()
+		.then(function(response) {
+			$scope.users = response.data;
+			alert($scope.users.length);
+			alert($scope.users[0].UserName);
+		}, function(err){
+			alert(err.message);
+		});
+	};
+	
 }]);
