@@ -26,4 +26,13 @@ myApp.controller("controller", function($scope) {
 	$scope.vibrateNotify = function() {
 		navigator.notification.vibrate(1000);
 	};
+	
+	$scope.callapi = function() {
+		$http.get('http://rajeshnandwani-001-site6.htempurl.com/api/cse').
+		.then(function(data) {
+			alert(data);
+		}, function(err){
+			alert(err.message);
+		}
+	};
 });
