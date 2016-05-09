@@ -33,6 +33,6 @@ myApp.controller("controller", function($scope) {
 			alert(data);
 		}, function(err){
 			alert(err.message);
-		}
+		});
 	};
 });
