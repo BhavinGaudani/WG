@@ -28,7 +28,7 @@ myApp.controller("controller", function($scope) {
 	};
 	
 	$scope.callapi = function() {
-		$http.get('http://rajeshnandwani-001-site6.htempurl.com/api/cse').
+		$http.get('http://rajeshnandwani-001-site6.htempurl.com/api/cse')
 		.then(function(data) {
 			alert(data);
 		}, function(err){
