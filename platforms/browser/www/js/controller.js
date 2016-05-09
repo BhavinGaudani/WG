@@ -11,7 +11,7 @@ myApp.factory('dataFactory', ['$http', "$window", function($http, $window) {
 }]);
 
 
-myApp.controller("controller", ['$scope','$http', function($scope, $http) {
+myApp.controller("controller", ['$scope','$http', 'dataFactory', function($scope, $http, dataFactory) {
 	
 	$scope.alertDeviceInfo = function() {
 	  var deviceInfo = ('Device Platform: ' + device.platform + '\n'
