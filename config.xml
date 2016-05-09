@@ -40,8 +40,6 @@
     <splash src="www/res/screens/android/screen-xhdpi-portrait.png" density="port-xhdpi"/>
   </platform>
   <access origin="*"/>
-  <allow-intent href="*"/>
-  <allow-navigation href="*" />
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
