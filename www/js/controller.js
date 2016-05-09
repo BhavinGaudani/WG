@@ -1,4 +1,4 @@
-myApp.controller("controller", function($scope) {
+myApp.controller("controller", ['$scope','$http', function($scope, $http) {
 	
 	$scope.alertDeviceInfo = function() {
 	  var deviceInfo = ('Device Platform: ' + device.platform + '\n'
@@ -29,10 +29,12 @@ myApp.controller("controller", function($scope) {
 	
 	$scope.callapi = function() {
 		$http.get('http://rajeshnandwani-001-site6.htempurl.com/api/cse')
-		.then(function(data) {
-			alert(data);
+		.then(function(response) {
+			$scope.users = response.data;
+			alert($scope.users.length);
+			alert($scope.users[0].UserName);
 		}, function(err){
 			alert(err.message);
 		});
 	};
-});
+}]);
